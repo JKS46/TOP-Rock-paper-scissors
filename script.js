@@ -1,5 +1,7 @@
 function getComputerChoice(){
         let randomNumber = Math.floor(Math.random() * 10) + 1;
+        // math.floor for rounding down
+        // math.random for generating random number in range 0-1,i.e 0.123456789
         if(randomNumber < 4){
             return "rock";
         }
