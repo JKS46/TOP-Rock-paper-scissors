@@ -1,6 +1,9 @@
 /* dark mode 
 visit counter */
 *{
-    
+    background-color: black;
+    font: 20px Arial, sans-serif;
+    color: white;
 }
+
 
