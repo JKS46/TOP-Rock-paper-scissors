@@ -1,5 +1,6 @@
 function getComputerChoice(){
         let randomNumber = Math.floor(Math.random() * 10) + 1;
+        /* *3 instead of *10 is also possible resulting in the output being 1 to 3 */
         // math.floor for rounding down
         // math.random for generating random number in range 0-1,i.e 0.123456789
         if(randomNumber < 4){
@@ -54,10 +55,10 @@ function game(){
             console.log(result);
         }
         if (playerScore > computerScore){
-            console.log("You win the game!");
+            console.log("You won the game!");
         }
         else if(playerScore < computerScore){
-            console.log("You lose the game!");
+            console.log("You lost the game!");
         }
         else{
             console.log("It's a tie!");
