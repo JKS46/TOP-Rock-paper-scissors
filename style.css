@@ -19,6 +19,7 @@ button,input{
     border: 2px solid honeydew;
     border-radius: 5px;
     font: bold 20px "Comic Sans MS", cursive, sans-serif;
+    margin-left: 15px;
 }
 img{
     width: 100px;
