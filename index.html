@@ -10,10 +10,34 @@
 </head>
 <body>
     <header>
-
+        <h1>Rock-Paper-Scissors</h1>
+        <h3>How many rounds do you want to play the game for?</h3>
+       <div>
+        <input type="number" id="rounds" min="1" max="10" placeholder="Toggle>">
+        <button onclick="getPlayerSelection()" id="start">Start</button>
+       </div>
     </header>
     <main>
-        
+        <div class="scores">
+            <div class="player">
+                <h3>Player</h3>
+                <h3 id="playerScore">0</h3>
+            </div>
+            <div class="computer">
+                <h3>Computer</h3>
+                <h3 id="computerScore">0</h3>
+            </div>
+        </div>
+        <div>
+            <h3 id="result"></h3>
+            <h3 id="gameResult"></h3>
+            <h3 id="makeChoice"></h3>
+        </div>
+        <div class="choice">
+            <button id="rock"><img src="img/rock.gif" alt="rock"></button>
+            <button id="paper"><img src="img/paper.gif" alt="paper"></button>
+            <button id="scissors"><img src="img/scissors.gif" alt="scissors"></button>
+        </div>
     </main>
     <footer>
         <div>
