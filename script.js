@@ -4,6 +4,8 @@ const makeChoice = document.querySelector("#makeChoice");
 const resultText = document.querySelector("#result");
 const gameResult = document.querySelector("#gameResult");
 const playerSelection = document.querySelectorAll(".choice>button");
+gameResult.style.color = "red";
+makeChoice.style.color = "orange";
 
 let i = 1;
 let playerScore = 0;
@@ -23,12 +25,16 @@ function getComputerChoice(){
     else
         return "scissors";
 }
-function getPlayerSelection(){
+function valueReset(){
     resultText.textContent = "Make your choice";
     makeChoice.textContent = "";
     gameResult.textContent = "";
-    player.textContent = "0";
-    computer.textContent = "0";
+    playerScore = 0;
+    computerScore = 0;
+    i=1;
+    player.textContent = playerScore;
+    computer.textContent = computerScore;
+    
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -55,13 +61,11 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 function game(playerSelection,rounds){
-    console.log(rounds);
-    console.log(i);
     makeChoice.textContent = "Make your choice for next round";
     if(i==1){
         gameResult.textContent = "";
-        player.textContent = "0";
-        computer.textContent = "0";
+        player.textContent = playerScore;
+        computer.textContent = computerScore;
     }
     let computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
@@ -79,8 +83,6 @@ function game(playerSelection,rounds){
     resultText.textContent = "Round "+(rounds-(rounds-i))+" :"+result;
     i++;
     if(i>rounds){
-        
-        gameResult.style.color = "red";
         if (playerScore > computerScore){
             gameResult.textContent = "You won the game!";
         }
@@ -91,7 +93,6 @@ function game(playerSelection,rounds){
             gameResult.textContent = "It's a tie!";
         }
         makeChoice.textContent = "Game Over";
-        makeChoice.style.color = "orange";
         playerScore = 0;
         computerScore = 0;
         i=1;
@@ -100,7 +101,7 @@ function game(playerSelection,rounds){
 playerSelection.forEach((button) => {
     button.addEventListener("click", () => {
         let rounds = document.getElementById("rounds").value; 
-        // this was above the function
-        return game(button.id,rounds);
+        game(button.id,rounds);
     });
 });
+/* Outside bec of event listener gets added but removing it was a hassle */
