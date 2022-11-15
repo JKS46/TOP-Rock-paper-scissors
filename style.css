@@ -20,6 +20,7 @@ button,input{
     border-radius: 5px;
     font: bold 20px "Comic Sans MS", cursive, sans-serif;
     margin-left: 15px;
+    min-width: 100px;
 }
 img{
     width: 100px;
